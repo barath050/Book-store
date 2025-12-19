@@ -8,7 +8,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
+} from "./ui/dropdown-menu.jsx";
 
 const Header = ({ user, isDarkMode, toggleTheme, onLogout, onNavigate, cartItemCount, onCartClick }) => {
   return (
