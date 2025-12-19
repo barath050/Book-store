@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import BookCard from '@/components/BookCard';
+import BookCard from './components/BookCard';
 import { Search } from 'lucide-react';
 
 const books = [
@@ -86,5 +86,6 @@ const HomePage = ({ user, onNavigate, addToCart }) => {
     </div>
   );
 };
+
 
 export default HomePage;
