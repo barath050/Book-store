@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import BookCard from './BookCard.jsx';
+import BookCard from './BookCard';
 import { Search } from 'lucide-react';
 
 const books = [
