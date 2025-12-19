@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, ShoppingBag } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
+import { Button } from './components/ui/button';
+import { useToast } from './components/ui/use-toast';
 
 const BookCard = ({ book, addToCart, user, onNavigate, index }) => {
   const { toast } = useToast();
@@ -61,5 +61,6 @@ const BookCard = ({ book, addToCart, user, onNavigate, index }) => {
     </motion.div>
   );
 };
+
 
 export default BookCard;
