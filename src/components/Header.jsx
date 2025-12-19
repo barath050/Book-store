@@ -8,7 +8,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from './components/ui/dropdown-menu';
+} from "./ui/dropdown-menu";
 
 const Header = ({ user, isDarkMode, toggleTheme, onLogout, onNavigate, cartItemCount, onCartClick }) => {
   return (
@@ -85,5 +85,6 @@ const Header = ({ user, isDarkMode, toggleTheme, onLogout, onNavigate, cartItemC
 
 
 export default Header;
+
 
 
