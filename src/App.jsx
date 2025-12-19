@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import Header from '@/components/Header';
-import HomePage from '@/components/HomePage';
-import AuthPage from '@/components/AuthPage';
-import CheckoutPage from '@/components/CheckoutPage';
-import Cart from '@/components/Cart';
-import { Toaster } from '@/components/ui/toaster';
+import Header from "./components/Header";
+import HomePage from './components/HomePage';
+import AuthPage from './components/AuthPage';
+import CheckoutPage from './components/CheckoutPage';
+import Cart from './components/Cart';
+import { Toaster } from './components/ui/toaster';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -166,5 +166,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
