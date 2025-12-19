@@ -1,6 +1,6 @@
 import React from 'react';
 import { Moon, Sun, ShoppingCart, User, LogOut, Book } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { Button } from './components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -82,5 +82,6 @@ const Header = ({ user, isDarkMode, toggleTheme, onLogout, onNavigate, cartItemC
     </header>
   );
 };
+
 
 export default Header;
