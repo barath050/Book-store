@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Button } from './components/ui/button';
-import { Label } from './components/ui/label';
+import { Button } from './ui/button';
+import { Label } from './ui/label';
 
 const AuthPage = ({ onLogin, onSignup, onNavigate }) => {
   const [isLogin, setIsLogin] = useState(true);

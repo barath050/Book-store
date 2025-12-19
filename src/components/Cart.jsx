@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Plus, Minus, Trash2, ShoppingBag } from 'lucide-react';
-import { Button } from './components/ui/button';
+import { Button } from './ui/button';
 
 const Cart = ({ isOpen, onClose, cartItems, updateQuantity, removeFromCart, cartTotal, onCheckout }) => {
   return (

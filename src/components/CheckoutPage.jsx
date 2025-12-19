@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
-import { Button } from './components/ui/button';
-import { Label } from './components/ui/label';
-import { useToast } from './components/ui/use-toast';
+import { Button } from './ui/button';
+import { Label } from './ui/label';
+import { useToast } from './ui/use-toast';
 
 const CheckoutPage = ({ cartItems, cartTotal, onNavigate, clearCart, user }) => {
   const { toast } = useToast();
