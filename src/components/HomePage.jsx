@@ -12,17 +12,13 @@ const books = [
   { id: 6, title: 'Thinking, Fast and Slow', author: 'Daniel Kahneman', price: 29.99, category: 'Psychology', rating: 4.5, description: 'The major New York Times bestseller that challenges the judgments we make.' },
 ];
 
-const categories = ['All', 'Fiction', 'Self-Help', 'Sci-Fi', 'Business', 'Psychology'];
-
 const HomePage = ({ user, onNavigate, addToCart }) => {
-  const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredBooks = books.filter(book => {
-    const matchesCategory = selectedCategory === 'All' || book.category === selectedCategory;
     const matchesSearch = book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          book.author.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+    return matchesSearch;
   });
 
   return (
@@ -49,22 +45,6 @@ const HomePage = ({ user, onNavigate, addToCart }) => {
         </div>
       </section>
 
-      {/* Filters */}
-      <div className="flex flex-wrap justify-center gap-2">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-              selectedCategory === category
-                ? 'bg-gray-900 text-white dark:bg-white dark:text-gray-900'
-                : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
-            }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
 
       {/* Grid */}
       {filteredBooks.length === 0 ? (
