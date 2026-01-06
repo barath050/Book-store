@@ -32,9 +32,9 @@ const BookCard = ({ book, addToCart, user, onNavigate, index }) => {
       className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-md transition-shadow flex flex-col h-full"
     >
       <div className="h-48 bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-6 relative">
-        <div className="w-24 h-36 bg-white dark:bg-gray-700 shadow-lg rounded flex items-center justify-center text-center p-2">
-           {/* Placeholder for cover art */}
-           <span className="font-serif font-bold text-2xl text-gray-300 dark:text-gray-500">{book.title.charAt(0)}</span>
+        <div className="w-24 h-36 bg-white dark:bg-gray-700 shadow-lg rounded overflow-hidden flex items-center justify-center text-center p-0">
+           {/* Cover art */}
+           <img src={book.image} alt={`${book.title} cover`} loading="lazy" onError={(e) => { e.currentTarget.style.display = 'none'; }} className="w-full h-full object-cover" />
         </div>
         <div className="absolute top-4 right-4 flex items-center gap-1 bg-white dark:bg-gray-900 px-2 py-1 rounded-full text-xs font-medium shadow-sm">
           <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
