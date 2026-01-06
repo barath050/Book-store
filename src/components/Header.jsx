@@ -1,5 +1,5 @@
 import React from 'react';
-import { Moon, Sun, ShoppingCart, User, LogOut, Book } from 'lucide-react';
+import { Moon, Sun, ShoppingCart, User, LogOut, Settings, History, Info } from 'lucide-react';
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
@@ -60,6 +60,27 @@ const Header = ({ user, isDarkMode, toggleTheme, onLogout, onNavigate, cartItemC
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-56">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => onNavigate('dashboard')} className="cursor-pointer">
+                  <User className="w-4 h-4 mr-2" />
+                  Dashboard
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => onNavigate('myaccount')} className="cursor-pointer">
+                  <User className="w-4 h-4 mr-2" />
+                  My Account
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => onNavigate('settings')} className="cursor-pointer">
+                  <Settings className="w-4 h-4 mr-2" />
+                  Settings
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => onNavigate('orderhistory')} className="cursor-pointer">
+                  <History className="w-4 h-4 mr-2" />
+                  Order History
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => onNavigate('about')} className="cursor-pointer">
+                  <Info className="w-4 h-4 mr-2" />
+                  About
+                </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={onLogout} className="text-red-600 focus:text-red-600 cursor-pointer">
                   <LogOut className="w-4 h-4 mr-2" />

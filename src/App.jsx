@@ -5,6 +5,11 @@ import HomePage from './components/HomePage';
 import AuthPage from './components/AuthPage';
 import CheckoutPage from './components/CheckoutPage';
 import Cart from './components/Cart';
+import Dashboard from './components/Dashboard';
+import MyAccount from './components/MyAccount';
+import Settings from './components/Settings';
+import OrderHistory from './components/OrderHistory';
+import About from './components/About';
 import { Toaster } from './components/ui/toaster';
 
 function App() {
@@ -59,7 +64,7 @@ function App() {
   const handleLogin = (email, password) => {
     const userData = { email, name: email.split('@')[0] };
     setUser(userData);
-    setCurrentPage('home');
+    setCurrentPage('dashboard');
   };
 
   const handleSignup = (email, password, name) => {
@@ -72,6 +77,10 @@ function App() {
     setUser(null);
     setCartItems([]);
     setCurrentPage('home');
+  };
+
+  const handleUpdateUser = (updatedUser) => {
+    setUser(updatedUser);
   };
 
   const addToCart = (book) => {
@@ -145,6 +154,36 @@ function App() {
             onNavigate={setCurrentPage}
             clearCart={clearCart}
             user={user}
+          />
+        )}
+        {currentPage === 'dashboard' && (
+          <Dashboard
+            user={user}
+            onNavigate={setCurrentPage}
+          />
+        )}
+        {currentPage === 'myaccount' && (
+          <MyAccount
+            user={user}
+            onUpdateUser={handleUpdateUser}
+            onNavigate={setCurrentPage}
+          />
+        )}
+        {currentPage === 'settings' && (
+          <Settings
+            isDarkMode={isDarkMode}
+            toggleTheme={toggleTheme}
+            onNavigate={setCurrentPage}
+          />
+        )}
+        {currentPage === 'orderhistory' && (
+          <OrderHistory
+            onNavigate={setCurrentPage}
+          />
+        )}
+        {currentPage === 'about' && (
+          <About
+            onNavigate={setCurrentPage}
           />
         )}
       </main>
