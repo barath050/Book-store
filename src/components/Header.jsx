@@ -1,5 +1,5 @@
 import React from 'react';
-import { Moon, Sun, ShoppingCart, User, LogOut, Settings, History, Info } from 'lucide-react';
+import { Moon, Sun, ShoppingCart, User, LogOut, Settings, History, Info, Book } from 'lucide-react';
 import { Button } from "./ui/button";
 import {
   DropdownMenu,
@@ -10,7 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu.jsx";
 
-const Header = ({ user, isDarkMode, toggleTheme, onLogout, onNavigate, cartItemCount, onCartClick }) => {
+const Header = ({ user, isDarkMode, toggleTheme, onLogout, onNavigate, cartItemCount, onCartClick, setDashboardSubPage }) => {
   return (
     <header className="sticky top-0 z-40 bg-white/80 dark:bg-gray-950/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -61,23 +61,23 @@ const Header = ({ user, isDarkMode, toggleTheme, onLogout, onNavigate, cartItemC
               <DropdownMenuContent align="end" className="w-56">
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem onClick={() => onNavigate('dashboard')} className="cursor-pointer">
+                <DropdownMenuItem onClick={() => { onNavigate('dashboard'); setDashboardSubPage('overview'); }} className="cursor-pointer">
                   <User className="w-4 h-4 mr-2" />
                   Dashboard
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => onNavigate('myaccount')} className="cursor-pointer">
+                <DropdownMenuItem onClick={() => { onNavigate('dashboard'); setDashboardSubPage('myaccount'); }} className="cursor-pointer">
                   <User className="w-4 h-4 mr-2" />
                   My Account
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => onNavigate('settings')} className="cursor-pointer">
+                <DropdownMenuItem onClick={() => { onNavigate('dashboard'); setDashboardSubPage('settings'); }} className="cursor-pointer">
                   <Settings className="w-4 h-4 mr-2" />
                   Settings
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => onNavigate('orderhistory')} className="cursor-pointer">
+                <DropdownMenuItem onClick={() => { onNavigate('dashboard'); setDashboardSubPage('orderhistory'); }} className="cursor-pointer">
                   <History className="w-4 h-4 mr-2" />
                   Order History
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => onNavigate('about')} className="cursor-pointer">
+                <DropdownMenuItem onClick={() => { onNavigate('dashboard'); setDashboardSubPage('about'); }} className="cursor-pointer">
                   <Info className="w-4 h-4 mr-2" />
                   About
                 </DropdownMenuItem>

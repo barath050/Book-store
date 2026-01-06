@@ -18,6 +18,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [cartItems, setCartItems] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [dashboardSubPage, setDashboardSubPage] = useState('overview');
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -65,6 +66,7 @@ function App() {
     const userData = { email, name: email.split('@')[0] };
     setUser(userData);
     setCurrentPage('dashboard');
+    setDashboardSubPage('overview');
   };
 
   const handleSignup = (email, password, name) => {
@@ -128,6 +130,7 @@ function App() {
         toggleTheme={toggleTheme}
         onLogout={handleLogout}
         onNavigate={setCurrentPage}
+        setDashboardSubPage={setDashboardSubPage}
         cartItemCount={cartItems.reduce((acc, item) => acc + item.quantity, 0)}
         onCartClick={() => setIsCartOpen(true)}
       />
@@ -160,30 +163,11 @@ function App() {
           <Dashboard
             user={user}
             onNavigate={setCurrentPage}
-          />
-        )}
-        {currentPage === 'myaccount' && (
-          <MyAccount
-            user={user}
+            subPage={dashboardSubPage}
+            setSubPage={setDashboardSubPage}
             onUpdateUser={handleUpdateUser}
-            onNavigate={setCurrentPage}
-          />
-        )}
-        {currentPage === 'settings' && (
-          <Settings
             isDarkMode={isDarkMode}
             toggleTheme={toggleTheme}
-            onNavigate={setCurrentPage}
-          />
-        )}
-        {currentPage === 'orderhistory' && (
-          <OrderHistory
-            onNavigate={setCurrentPage}
-          />
-        )}
-        {currentPage === 'about' && (
-          <About
-            onNavigate={setCurrentPage}
           />
         )}
       </main>
