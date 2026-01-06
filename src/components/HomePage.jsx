@@ -63,6 +63,10 @@ const HomePage = ({ user, onNavigate, addToCart }) => {
           ))}
         </div>
       )}
+      
+      <footer className="text-center py-8 text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-800">
+        © 2026 Bookstore. All rights reserved.
+      </footer>
     </div>
   );
 };
